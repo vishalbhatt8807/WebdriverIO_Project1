@@ -23,8 +23,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-       // './test/specs/**/*.js'
-       './test/specs/login.js'
+        './test/specs/**/*.js'
+       //'./test/specs/login.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -125,13 +125,21 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }],
+    ['junit', {
+        outputDir: 'junit-reports',
+        outputFileFormat: function(options) { // optional
+            // return `results-${new Date().getTime()}.xml`
+            return `results-${options.cid}.xml`
+        }
+    }]],
         // ...
-        reporters: [['allure', {
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: true,
-        }]],
+        
         // ...
     
     
