@@ -9,7 +9,7 @@ describe('Perform Login operation', () => {
      
         await expect(await lp.validateLandingPage()).toEqual("Login Page")
         lp.performLoginProcess('tomsmith', 'SuperSecretPassword!')
-        await expect(await sec.validateWelcomeMessage()).toContain("You logged into a secure area!")
+        await expect(await sec.validateWelcomeMessage()).toContain("Youogged into a secure area!")
 
        // sec.validateWelcomeMessage("You logged into a secure area!")
         await browser.pause(1000)
