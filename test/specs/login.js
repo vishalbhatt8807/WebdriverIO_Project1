@@ -12,6 +12,6 @@ describe('Perform Login operation', () => {
         await expect(await sec.validateWelcomeMessage()).toContain("You logged into a secure area!")
 
        // sec.validateWelcomeMessage("You logged into a secure area!")
-        await browser.pause(2000)
+        await browser.pause(1000)
     });
 });
